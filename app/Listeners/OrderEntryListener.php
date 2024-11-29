@@ -22,7 +22,7 @@ class OrderEntryListener
     public function handle(OrderEntry $event): void
     {
         info('Order ID : '.$event->order_id);
-        info($event->table.' : '.$event->memo, $event->items);
+        info($event->memo, $event->items);
         info('options', $event->options);
 
 //        Notification::route('line', '')
