@@ -40,7 +40,7 @@
         }
     ],
     "env": {
-        "APP_NAME": "セルフオーダーシステム",
+        "APP_NAME": "上智大学２号館食堂",
         "APP_TIMEZONE": "Asia/Tokyo",
         "APP_LOCALE": "ja",
         "APP_CONFIG_CACHE": "/tmp/config.php",
