@@ -14,6 +14,7 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
+        "revolution/laravel-paypay": "^2.2",
         "revolution/self-ordering": "*"
     },
     "require-dev": {
