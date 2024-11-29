@@ -4,11 +4,17 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
+    "repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/your-username/self-ordering"
+    }
+    ],
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "revolution/self-ordering": "^4.0"
+        "revolution/self-ordering": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -68,6 +74,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
