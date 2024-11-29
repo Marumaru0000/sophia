@@ -7,7 +7,7 @@
     "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/your-username/self-ordering"
+        "url": "https://github.com/Marumaru0000/self-ordering"
     }
     ],
     "require": {
