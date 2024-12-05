@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f032ea0201ea83259da060214d321360",
+    "content-hash": "78976983fde32453c4c2cc653505133c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3487,16 +3487,16 @@
         },
         {
             "name": "revolution/self-ordering",
-            "version": "4.0.5",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kawax/self-ordering.git",
-                "reference": "1b9ccc0c4b59c39d85a1028ad186e1138041b30e"
+                "url": "https://github.com/Marumaru0000/self-ordering.git",
+                "reference": "0e0f1870637fdc3c99ab5502bcfab4880e690592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/self-ordering/zipball/1b9ccc0c4b59c39d85a1028ad186e1138041b30e",
-                "reference": "1b9ccc0c4b59c39d85a1028ad186e1138041b30e",
+                "url": "https://api.github.com/repos/Marumaru0000/self-ordering/zipball/0e0f1870637fdc3c99ab5502bcfab4880e690592",
+                "reference": "0e0f1870637fdc3c99ab5502bcfab4880e690592",
                 "shasum": ""
             },
             "require": {
@@ -3510,6 +3510,7 @@
                 "google/apiclient": "^2.15",
                 "orchestra/testbench": "^9.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3523,7 +3524,11 @@
                     "Revolution\\Ordering\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -3540,10 +3545,10 @@
                 "starter-kit"
             ],
             "support": {
-                "issues": "https://github.com/kawax/self-ordering/issues",
-                "source": "https://github.com/kawax/self-ordering/tree/4.0.5"
+                "source": "https://github.com/Marumaru0000/self-ordering/tree/develop",
+                "issues": "https://github.com/Marumaru0000/self-ordering/issues"
             },
-            "time": "2024-08-25T02:39:34+00:00"
+            "time": "2024-12-05T10:31:40+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8556,7 +8561,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "revolution/self-ordering": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

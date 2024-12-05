@@ -15,7 +15,7 @@
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "revolution/laravel-paypay": "^2.2",
-        "revolution/self-ordering": "*"
+        "revolution/self-ordering": "dev-develop"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -59,7 +59,12 @@
             "@php artisan route:cache",
             "@php artisan view:cache",
             "@php artisan event:cache"
-        ]
+        ],
+        "post-install-cmd": [
+        "php artisan config:cache",
+        "php artisan route:cache",
+        "php artisan view:clear"
+    ]
     },
     "extra": {
         "laravel": {
