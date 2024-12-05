@@ -28,6 +28,14 @@
             "dest": "/public/images/$1"
         },
         {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
+            "src": "/robots.txt",
+            "dest": "/public/robots.txt"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
@@ -43,6 +51,7 @@
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "DB_CONNECTION": "mysql",
         "CACHE_DRIVER": "array",
+        "CACHE_STORE": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
         "SESSION_COOKIE": "ordering_session",

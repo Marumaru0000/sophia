@@ -60,6 +60,12 @@
             "@php artisan view:cache",
             "@php artisan event:cache"
         ],
+        "vercel-build": [
+        "php artisan config:clear",
+        "php artisan cache:clear",
+        "php artisan route:cache",
+        "php artisan config:cache"
+    ],
         "post-install-cmd": [
         "php artisan config:cache",
         "php artisan route:cache",
