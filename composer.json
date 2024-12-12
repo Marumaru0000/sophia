@@ -6,8 +6,8 @@
     "license": "MIT",
     "repositories": [
     {
-        "type": "vcs",
-        "url": "https://github.com/Marumaru0000/self-ordering"
+        "type": "path",
+        "url": "../self-ordering"
     }
     ],
     "require": {
