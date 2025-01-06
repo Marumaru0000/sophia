@@ -3667,12 +3667,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Marumaru0000/self-ordering.git",
-                "reference": "7ad142e44b727a7d763bdc352d7f5d92b0ed06ea"
+                "reference": "5c3fe46c7540af5a50f202c85724444111a98bf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Marumaru0000/self-ordering/zipball/7ad142e44b727a7d763bdc352d7f5d92b0ed06ea",
-                "reference": "7ad142e44b727a7d763bdc352d7f5d92b0ed06ea",
+                "url": "https://api.github.com/repos/Marumaru0000/self-ordering/zipball/5c3fe46c7540af5a50f202c85724444111a98bf2",
+                "reference": "5c3fe46c7540af5a50f202c85724444111a98bf2",
                 "shasum": ""
             },
             "require": {
@@ -3724,7 +3724,7 @@
                 "source": "https://github.com/Marumaru0000/self-ordering/tree/develop",
                 "issues": "https://github.com/Marumaru0000/self-ordering/issues"
             },
-            "time": "2025-01-05T13:06:04+00:00"
+            "time": "2025-01-06T11:26:35+00:00"
         },
         {
             "name": "symfony/clock",
