@@ -40,16 +40,6 @@
             "dest": "/api/index.php"
         }
     ],
-    "scripts": {
-        "vercel-build": [
-            "composer install --no-dev --optimize-autoloader",
-            "php artisan config:clear",
-            "php artisan cache:clear",
-            "php artisan config:cache",
-            "php artisan route:cache",
-            "php artisan migrate --force"
-        ]
-    },
     "env": {
         "APP_NAME": "2号館5階食堂",
         "APP_TIMEZONE": "Asia/Tokyo",
