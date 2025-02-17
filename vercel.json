@@ -4,51 +4,52 @@
         "hnd1"
     ],
     "builds": [
-    {
-        "src": "/api/index.php",
-        "use": "vercel-php@0.7.2",
-        "config": {
-            "runtime": {
-                "extensions": ["openssl", "pdo_mysql"]
+        {
+            "src": "/api/index.php",
+            "use": "vercel-php@0.7.2",
+            "config": {
+                "runtime": {
+                    "extensions": ["openssl", "pdo_mysql"]
+                }
             }
+        },
+        {
+            "src": "/public/**",
+            "use": "@vercel/static"
         }
-    },
-    {
-        "src": "/public/**",
-        "use": "@vercel/static"
-    }
-],
+    ],
     "routes": [
-    {
-        "src": "/build/assets/(.*)",
-        "dest": "/public/build/assets/$1"
-    },
-    {
-        "src": "/images/(.*)",
-        "dest": "/public/images/$1"
-    },
-    {
-        "src": "/favicon.ico",
-        "dest": "/public/favicon.ico"
-    },
-    {
-        "src": "/robots.txt",
-        "dest": "/public/robots.txt"
-    },
-    {
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }
-],
+        {
+            "src": "/build/assets/(.*)",
+            "dest": "/public/build/assets/$1"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/public/images/$1"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
+            "src": "/robots.txt",
+            "dest": "/public/robots.txt"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
     "scripts": {
-    "vercel-build": [
-        "composer install --no-dev --optimize-autoloader",
-        "php artisan config:clear",
-        "php artisan cache:clear",
-        "php artisan config:cache",
-        "php artisan route:cache",
-        "php artisan migrate --force"
-    ]},
+        "vercel-build": [
+            "composer install --no-dev --optimize-autoloader",
+            "php artisan config:clear",
+            "php artisan cache:clear",
+            "php artisan config:cache",
+            "php artisan route:cache",
+            "php artisan migrate --force"
+        ]
+    },
     "env": {
         "APP_NAME": "2号館5階食堂",
         "APP_TIMEZONE": "Asia/Tokyo",
@@ -62,6 +63,11 @@
         "APP_DEBUG": "false",
         "APP_URL": "https://self-ordering-starter-rose.vercel.app",
         "DB_CONNECTION": "mysql",
+        "DB_HOST": "your-database-host.com",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "SOPHIA_MOBILE_ORDER",
+        "DB_USERNAME": "your-db-username",
+        "DB_PASSWORD": "your-db-password",
         "CACHE_DRIVER": "array",
         "CACHE_STORE": "array",
         "LOG_CHANNEL": "stderr",
