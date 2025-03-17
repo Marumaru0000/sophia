@@ -1,4 +1,4 @@
-#　デプロイ中のURL
+##　デプロイ中のURL
 https://self-ordering-starter-rose.vercel.app/order/
 
 ## 管理画面のURL
