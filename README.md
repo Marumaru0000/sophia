@@ -1,24 +1,8 @@
-# Self Ordering System
+#　デプロイ中のURL
+https://self-ordering-starter-rose.vercel.app/order/
 
-オープンソースのセルフオーダーシステムのテンプレート。  
-https://github.com/kawax/self-ordering
-
-## デモサイトのURL
-- QRコード表示 https://self-ordering-starter.vercel.app/
-- メニュー選択 https://self-ordering-starter.vercel.app/order
-- 管理画面(パスワードは`secret`) https://self-ordering-starter.vercel.app/login
-
-## Vercelですぐに動かす
-事前にGitHubとVercelのアカウントを準備。  
-https://vercel.com/
-
-- GitHubで`Use this template`から新しいプロジェクトを作る。
-- Vercelで`New Project`から今作ったプロジェクトをインポート。
-- インポート時にはEnvironment Variablesで`APP_KEY`の追加だけ必須。
-  - `APP_KEY`はここでランダムに生成されたキーを使う。 https://laravel-app-key.vercel.app/
-
-このボタンからでもデプロイ。  
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkawax%2Fself-ordering-starter&env=APP_KEY&envDescription=Laravel%20APP%20Key&envLink=https%3A%2F%2Flaravel-app-key.vercel.app%2F)
+## 管理画面のURL
+- 管理画面(パスワードは`eaglelunch`) https://self-ordering-starter-rose.vercel.app/login
 
 ## ローカルで動かす
 
