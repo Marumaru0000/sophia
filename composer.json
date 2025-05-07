@@ -16,7 +16,7 @@
         "laravel/socialite": "^5.20",
         "laravel/tinker": "^2.9",
         "revolution/laravel-paypay": "^2.2",
-        "revolution/self-ordering": "dev-develop"
+        "revolution/self-ordering": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
