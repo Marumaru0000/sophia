@@ -7,12 +7,13 @@
     "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/Marumaru0000/self-ordering"
+        "url": "https://github.com/Marumaru0000/sophia-base"
     }
     ],
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
+        "laravel/socialite": "^5.20",
         "laravel/tinker": "^2.9",
         "revolution/laravel-paypay": "^2.2",
         "revolution/self-ordering": "dev-develop"
