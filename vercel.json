@@ -51,7 +51,7 @@
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://self-ordering-starter-rose.vercel.app",
+        "APP_URL": "https://sophia-iota.vercel.app",
         "DB_CONNECTION": "mysql",
         "DB_HOST": "your-database-host.com",
         "DB_PORT": "3306",
