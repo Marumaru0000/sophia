@@ -6,8 +6,8 @@
     "license": "MIT",
     "repositories": [
     {
-        "type": "path",
-        "url": "../self-ordering",
+        "type": "vcs",
+        "url": "https://github.com/Marumaru0000/sophia-base",
         "options": {
         "symlink": true
         }

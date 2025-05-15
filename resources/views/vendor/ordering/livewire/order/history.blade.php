@@ -24,56 +24,55 @@
         </div>
     @endif
 
-    {{-- 履歴をループ表示 --}}
+    {{-- purchase_time 降順 + 受け取り済みは末尾にまとめ済み --}}
     @foreach($this->histories as $history)
-        <div class="border p-3 mb-3 rounded">
-            <h3>注文番号: {{ $history['order_id'] }}</h3>
-            <p>日時: {{ $history['purchase_time'] }}</p>
+    <div
+        class="border p-3 mb-3 rounded transition-opacity duration-200
+               @if($history['status'] === '受け渡し完了')
+                   bg-gray-100 text-gray-500 opacity-50 cursor-not-allowed
+               @endif"
+    >
+        <h3>注文番号: {{ $history['order_id'] }}</h3>
+        <p>日時: {{ $history['purchase_time'] }}</p>
 
-            <div class="my-2 p-2 border-b">
-                <strong>{{ $history['item_name'] }}</strong>（{{ $history['price'] }}円）
-                @if(!empty($history['selected_option']))
-                    ({{ $history['selected_option'] }})
-                @endif
+        <div class="my-2 p-2 border-b">
+            <strong>{{ $history['item_name'] }}</strong>（{{ $history['price'] }}円）
+            @if(!empty($history['selected_option']))
+                ({{ $history['selected_option'] }})
+            @endif
 
-                {{-- 商品画像表示 --}}
-                @if(!empty($history['image']))
-                    <div class="mt-1">
-                        <x-ordering::image :src="$history['image'] ?? config('ordering.menu.no_image')" />
-                    </div>
-                @endif
+            @if(!empty($history['image']))
+                <div class="mt-1">
+                    <x-ordering::image :src="$history['image']" />
+                </div>
+            @endif
 
-                {{-- ステータス表示 --}}
-                <p class="font-bold text-sm mt-2
-                    @if($history['status'] === '未準備') text-red-600
-                    @elseif($history['status'] === '準備完了') text-yellow-500
-                    @elseif($history['status'] === '受け渡し完了') text-gray-500
-                    @endif">
-                    ステータス: {{ $history['status'] }}
-                </p>
-            </div>
+            <p class="font-bold text-sm mt-2
+                @if($history['status'] === '未準備') text-red-600
+                @elseif($history['status'] === '準備完了') text-yellow-500
+                @else text-gray-500
+                @endif">
+                ステータス: {{ $history['status'] }}
+            </p>
         </div>
+    </div>
     @endforeach
+
 
     @include('ordering::history.footer')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const container = document.getElementById('random-symbols');
-        if (container) {
-            const symbols = ['★', '●', '▲', '■'];
-            setInterval(() => {
-                container.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-            }, 500);
-        }
+        const symbols = ['★', '●', '▲', '■'];
+        setInterval(() => {
+            const el = document.getElementById('random-symbols');
+            if (el) el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        }, 500);
 
-        const timeElement = document.getElementById('current-time');
-        if (timeElement) {
-            setInterval(() => {
-                const now = new Date();
-                timeElement.textContent = now.toLocaleTimeString('ja-JP');
-            }, 1000);
-        }
+        setInterval(() => {
+            const timeEl = document.getElementById('current-time');
+            if (timeEl) timeEl.textContent = new Date().toLocaleTimeString('ja-JP');
+        }, 1000);
     });
 </script>
