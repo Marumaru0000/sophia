@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Livewire\Ordering;
-
+use App\Services\LineBotService;
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Collection;
@@ -82,7 +82,7 @@ class Orders extends Component
                 return [
                     'id' => $record['id'],
                     'order_id' => $record['fields']['order_id'] ?? '',
-                    'user_id' => $record['fields']['customer_id'] ?? '',
+                    'user_id' => $record['fields']['line_user_id'] ?? '',
                     'item' => $record['fields']['item_name'] ?? '',
                     'category' => $record['fields']['category'] ?? '未分類',
                     'options' => $record['fields']['selected_option'] ?? '',
@@ -115,6 +115,25 @@ class Orders extends Component
             ->patch("https://api.airtable.com/v0/" . env('AIRTABLE_BASE_ID') . "/" . env('AIRTABLE_TABLE_NAME') . "/" . $order['id'], [
                 'fields' => ['status' => $status],
             ]);
+    }
+    // 準備完了になったら、ユーザーへ LINE Push
+    if ($status === '準備完了') {
+        $lineUserIds = collect($this->orders)
+            ->where('order_id', $orderId)
+            ->pluck('user_id')
+            ->unique()
+            ->filter();
+
+        /** @var LineBotService $svc */
+        $svc = app(LineBotService::class);
+        foreach ($lineUserIds as $uid) {
+            $svc->push(
+                $uid,
+                "🛎 ご注文 {$orderId} のお料理が準備完了しました。お受け取り口までお越しください！"
+            );
+        }
+        // 任意でログも残せます
+        Log::info("LINE Push sent to: " . $lineUserIds->implode(','));
     }
 
     $this->loadOrders();

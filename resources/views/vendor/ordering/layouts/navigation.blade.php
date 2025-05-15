@@ -10,7 +10,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-ordering::nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                <x-ordering::nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Dashboard') }}
                     </x-ordering::nav-link>
                 </div>
@@ -33,10 +33,10 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
 
-                            <x-ordering::dropdown-link :href="route('logout')"
+                            <x-ordering::dropdown-link :href="route('admin.logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Logout') }}
@@ -61,7 +61,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-ordering::responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-ordering::responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                 {{ __('Dashboard') }}
             </x-ordering::responsive-nav-link>
         </div>
@@ -83,10 +83,10 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
 
-                    <x-ordering::responsive-nav-link :href="route('logout')"
+                    <x-ordering::responsive-nav-link :href="route('admin.logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Logout') }}

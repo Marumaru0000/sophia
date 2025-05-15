@@ -6,8 +6,11 @@
     "license": "MIT",
     "repositories": [
     {
-        "type": "vcs",
-        "url": "https://github.com/Marumaru0000/sophia-base"
+        "type": "path",
+        "url": "../self-ordering",
+        "options": {
+        "symlink": true
+        }
     }
     ],
     "require": {
@@ -15,8 +18,10 @@
         "laravel/framework": "^11.0",
         "laravel/socialite": "^5.20",
         "laravel/tinker": "^2.9",
+        "linecorp/line-bot-sdk": "^11.1",
         "revolution/laravel-paypay": "^2.2",
-        "revolution/self-ordering": "dev-main"
+        "revolution/self-ordering": "dev-main",
+        "socialiteproviders/line": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

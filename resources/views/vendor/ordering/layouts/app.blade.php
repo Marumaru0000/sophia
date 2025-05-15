@@ -20,11 +20,22 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<div class="font-sans text-gray-900 dark:bg-gray-900 dark:text-white antialiased">
+<div x-data
+     @redirect-to.window="window.location.href = $event.detail.url"
+     class="font-sans text-gray-900 dark:bg-gray-900 dark:text-white antialiased">
     {{ $slot }}
 </div>
 
+
 @livewireScripts
+<script>
+    window.addEventListener('redirectTo', event => {
+        if (event.detail?.url) {
+            window.location.href = event.detail.url;
+        }
+    });
+</script>
+
 
 </body>
 </html>

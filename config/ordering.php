@@ -124,8 +124,8 @@ return [
      * リダイレクト.
      */
     'redirect' => [
-        'from_menus' => env('ORDERING_REDIRECT_FROM_MENUS', 'prepare'),
-        'from_payment' => env('ORDERING_REDIRECT_FROM_PAYMENT', 'history'),
+        'from_menus' => env('ORDERING_REDIRECT_FROM_MENUS', 'customer.prepare'),
+        'from_payment' => env('ORDERING_REDIRECT_FROM_PAYMENT', 'customer.history'),
     ],
 
     /**
@@ -136,14 +136,12 @@ return [
     /**
      * ルーティングを登録.
      */
-    'routes' => env('ORDERING_ROUTES', true),
+    'routes' => false,
 
-    /**
-     * ミドルウェア.
-     */
     'middleware' => [
-        'web' => env('ORDERING_MIDDLEWARE_WEB', 'web'),
-        'api' => env('ORDERING_MIDDLEWARE_API', 'api'),
+        // すべてのウェブ注文ルートに auth を付与
+        'web' => ['web', 'auth'],
+        'api' => ['api'],
     ],
 
     /**

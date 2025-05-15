@@ -1,8 +1,8 @@
 @php
-use Illuminate\Support\Arr;
+    use Illuminate\Support\Arr;
 @endphp
 
-<div class="mx-auto pb-40">
+<div class="mx-auto pb-40" wire:poll.5000ms="loadHistories">
     @include('ordering::order.header')
 
     <div class="p-3 m-6 text-center">
@@ -43,7 +43,7 @@ use Illuminate\Support\Arr;
                     </div>
                 @endif
 
-                {{-- ステータスの色分け表示 --}}
+                {{-- ステータス表示 --}}
                 <p class="font-bold text-sm mt-2
                     @if($history['status'] === '未準備') text-red-600
                     @elseif($history['status'] === '準備完了') text-yellow-500
@@ -58,7 +58,6 @@ use Illuminate\Support\Arr;
     @include('ordering::history.footer')
 </div>
 
-{{-- 以下のJSは任意。不要なら削除してもOK --}}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('random-symbols');

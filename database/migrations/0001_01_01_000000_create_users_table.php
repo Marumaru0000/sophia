@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // LINEログイン用のユーザーテーブル
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('line_user_id')->unique();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('avatar_url')->nullable();
             $table->timestamps();
         });
 
+        // パスワードリセット等が不要になれば削除してもOKですが、残す場合はそのまま
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
