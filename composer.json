@@ -7,10 +7,7 @@
     "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/Marumaru0000/sophia-base",
-        "options": {
-        "symlink": true
-        }
+        "url": "https://github.com/Marumaru0000/sophia-base"
     }
     ],
     "require": {
